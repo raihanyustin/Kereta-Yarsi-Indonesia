@@ -9,11 +9,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author mraih
  */
 public class SignUp_KYI extends javax.swing.JFrame {
+
+    DatabaseConnector c = new DatabaseConnector();
 
     /**
      * Creates new form SignUp_KYS
@@ -171,36 +174,35 @@ public class SignUp_KYI extends javax.swing.JFrame {
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
         // TODO add your handling code here:
-       String username = textUsername.getText();
-       String password = textPassword.getText();
-       String confirmPassword = textCPassword.getText();
-       if ( username.isEmpty() ) {
-           JOptionPane.showMessageDialog(null, "Mohon buat username terlebih dahulu", "System Warning", JOptionPane.WARNING_MESSAGE);
-       } else if ( password.isEmpty() ) {
+        String username = textUsername.getText();
+        String password = textPassword.getText();
+        String confirmPassword = textCPassword.getText();
+        if (username.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Mohon buat username terlebih dahulu", "System Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Mohon buat password terlebih dahulu", "System Warning", JOptionPane.WARNING_MESSAGE);
-       } else if ( confirmPassword.isEmpty() ) {
+        } else if (confirmPassword.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Mohon konfirmasi password terlebih dahulu", "System Warning", JOptionPane.WARNING_MESSAGE);
-       } else if ( !password.equalsIgnoreCase(confirmPassword) ) {
+        } else if (!password.equalsIgnoreCase(confirmPassword)) {
             JOptionPane.showMessageDialog(null, "Password tidak sesuai", "System Warning", JOptionPane.ERROR_MESSAGE);
-       } else {
-           try {
-               Connection c = DatabaseConnector.getConnect();
-               String sql = "INSERT INTO login_user (username, password) VALUES (?,?)";
-               
-               PreparedStatement p = c.prepareStatement(sql);
-               p.setString(1, username);
-               p.setString(2, password);
-               p.executeUpdate();
-               
-               JOptionPane.showMessageDialog(null, "Account created successfully", "System", JOptionPane.INFORMATION_MESSAGE);
-           } catch (SQLException e) {
-               JOptionPane.showMessageDialog(null, "Error:" + e.getMessage(), "System Error", JOptionPane.ERROR_MESSAGE);
-           } finally {
-               this.dispose();
-               SignIn_KYI signIn = new SignIn_KYI();
-               signIn.setVisible(true);
-           }
-       }
+        } else {
+            if (c.insert("login_user", username, password)) {
+                JOptionPane.showMessageDialog(null, "Account created successfully", "System", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+                SignIn_KYI signIn = new SignIn_KYI();
+                signIn.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error:" + "Failed to sign up, try again", "System Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+//                Connection c = DatabaseConnector.getConnect();
+//                String sql = "INSERT INTO login_user (username, password) VALUES (?,?)";
+//
+//                PreparedStatement p = c.prepareStatement(sql);
+//                p.setString(1, username);
+//                p.setString(2, password);
+//                p.executeUpdate();
+        }
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void buttonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignUpActionPerformed

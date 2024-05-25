@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author mraih
  */
 public class SignIn_KYI extends javax.swing.JFrame {
+    DatabaseConnector c = new DatabaseConnector();
 
     /**
      * Creates new form SignIn_KYS
@@ -164,11 +165,8 @@ public class SignIn_KYI extends javax.swing.JFrame {
         // TODO add your handling code here:
         MainMenu_KYI mainMenu = new MainMenu_KYI();
         try {
-            Connection c = DatabaseConnector.getConnect();
-            Statement s = c.createStatement();
-            
             String sql = "SELECT * FROM login_user WHERE username ='" + textUsername.getText() + "' and password='" + textPassword.getText() + "'";
-            ResultSet r = s.executeQuery(sql);
+            ResultSet r = c.executeQuery(sql);
             
             if ( r.next() ) {
                 JOptionPane.showMessageDialog(null, "Login Successfully");
@@ -179,8 +177,8 @@ public class SignIn_KYI extends javax.swing.JFrame {
                 textPassword.requestFocus();
             }
         }  catch ( SQLException e ) {
-            e.printStackTrace();
             System.out.println("Error!");
+            System.err.println(e.getMessage());
         }
     }//GEN-LAST:event_buttonLoginActionPerformed
 
