@@ -26,10 +26,9 @@ public class MainMenu_KYI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        logo = new javax.swing.JLabel();
+        orderTicket = new javax.swing.JButton();
+        myTicket = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kereta Yarsi Indonesia");
@@ -39,57 +38,53 @@ public class MainMenu_KYI extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 51));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Logo Header KYI.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Logo Header KYI.png"))); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/OrderTicket.png"))); // NOI18N
-        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        orderTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/OrderTicket.png"))); // NOI18N
+        orderTicket.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        orderTicket.setContentAreaFilled(false);
+        orderTicket.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        orderTicket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                orderTicketActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Expedition.png"))); // NOI18N
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setFocusPainted(false);
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/MyTicket.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.setFocusPainted(false);
+        myTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/MyTicket.png"))); // NOI18N
+        myTicket.setBorder(null);
+        myTicket.setContentAreaFilled(false);
+        myTicket.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        myTicket.setFocusPainted(false);
+        myTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myTicketActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(80, 80, 80)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(logo)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(orderTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(myTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(46, 46, 46)
-                .addComponent(jButton1)
+                .addComponent(logo)
+                .addGap(35, 35, 35)
+                .addComponent(orderTicket)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(0, 43, Short.MAX_VALUE))
+                .addComponent(myTicket)
+                .addGap(0, 41, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,12 +102,18 @@ public class MainMenu_KYI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void orderTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderTicketActionPerformed
         // TODO add your handling code here:
         OrderTicket_KYI order = new OrderTicket_KYI();
         order.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_orderTicketActionPerformed
+
+    private void myTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myTicketActionPerformed
+        // TODO add your handling code here:
+        CheckTicket check = new CheckTicket();
+        check.setVisible(true);
+    }//GEN-LAST:event_myTicketActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,10 +151,9 @@ public class MainMenu_KYI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel logo;
+    private javax.swing.JButton myTicket;
+    private javax.swing.JButton orderTicket;
     // End of variables declaration//GEN-END:variables
 }

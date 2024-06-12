@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+import com.toedter.calendar.JCalendar;
+import javax.swing.JOptionPane;
 /**
  *
  * @author mraih
@@ -31,22 +32,22 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        AsalBerangkat = new javax.swing.JComboBox<>();
+        asal = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        AsalBerangkat1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        tujuan = new javax.swing.JComboBox<>();
         pPergi = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        cbPulangPergi = new javax.swing.JCheckBox();
+        pulangPergi = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        tanggalPergi = new com.toedter.calendar.JDateChooser();
         pPassanger = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         pPulang = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        tanggalPulang = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -65,24 +66,19 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Asal");
 
-        AsalBerangkat.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        AsalBerangkat.setForeground(new java.awt.Color(255, 255, 255));
-        AsalBerangkat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gambir - Jakarta", "Bojong Soang - Bandung", "Gubeng - Surabaya" }));
+        asal.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        asal.setForeground(new java.awt.Color(255, 255, 255));
+        asal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gambir - Jakarta", "Bojong Soang - Bandung", "Gubeng - Surabaya" }));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Tujuan");
 
-        AsalBerangkat1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        AsalBerangkat1.setForeground(new java.awt.Color(255, 255, 255));
-        AsalBerangkat1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gambir-JKT", "BojongSoang-BDG", "Madiun-SBY" }));
-        AsalBerangkat1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AsalBerangkat1ActionPerformed(evt);
-            }
-        });
-
         jButton1.setText("Tukar");
+
+        tujuan.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        tujuan.setForeground(new java.awt.Color(255, 255, 255));
+        tujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gambir - Jakarta", "Bojong Soang - Bandung", "Gubeng - Surabaya" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -94,12 +90,12 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16)
-                            .addComponent(AsalBerangkat, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(asal, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(AsalBerangkat1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tujuan, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))))
                 .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -119,13 +115,13 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AsalBerangkat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(asal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel17)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AsalBerangkat1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tujuan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(325, 325, 325))
         );
 
@@ -142,18 +138,15 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Tanggal Pergi");
 
-        cbPulangPergi.addActionListener(new java.awt.event.ActionListener() {
+        pulangPergi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbPulangPergiActionPerformed(evt);
+                pulangPergiActionPerformed(evt);
             }
         });
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Pulang Pergi");
-
-        jDateChooser1.setAutoscrolls(true);
-        jDateChooser1.setDateFormatString("D,MMMM,Y\n");
 
         javax.swing.GroupLayout pPergiLayout = new javax.swing.GroupLayout(pPergi);
         pPergi.setLayout(pPergiLayout);
@@ -164,12 +157,12 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
                 .addGroup(pPergiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pPergiLayout.createSequentialGroup()
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                         .addComponent(jLabel14))
                     .addGroup(pPergiLayout.createSequentialGroup()
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tanggalPergi, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cbPulangPergi)))
+                        .addComponent(pulangPergi)))
                 .addGap(16, 16, 16))
         );
         pPergiLayout.setVerticalGroup(
@@ -181,8 +174,8 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pPergiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbPulangPergi, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pulangPergi, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tanggalPergi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -253,7 +246,7 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
             .addGroup(pPulangLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(pPulangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tanggalPulang, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -263,7 +256,7 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tanggalPulang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -320,22 +313,18 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
 
     private void pPassangerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPassangerMouseClicked
         // TODO add your handling code here:
-        addPassengers_KYI passengers = new addPassengers_KYI();
+        AddPassengers_KYI passengers = new AddPassengers_KYI();
         passengers.setVisible(true);
     }//GEN-LAST:event_pPassangerMouseClicked
 
-    private void AsalBerangkat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsalBerangkat1ActionPerformed
+    private void pulangPergiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulangPergiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AsalBerangkat1ActionPerformed
-
-    private void cbPulangPergiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPulangPergiActionPerformed
-        // TODO add your handling code here:
-        if (cbPulangPergi.isSelected()) {
+        if (pulangPergi.isSelected()) {
             pPulang.setVisible(true);
         } else {
             pPulang.setVisible(false);
         }
-    }//GEN-LAST:event_cbPulangPergiActionPerformed
+    }//GEN-LAST:event_pulangPergiActionPerformed
 
     private void pPergiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPergiMouseClicked
         // TODO add your handling code here:
@@ -343,6 +332,16 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        if (asal.getSelectedItem().equals(tujuan.getSelectedItem())) {
+            JOptionPane.showMessageDialog(null, "Pilih tujuan yang berbeda", "System", JOptionPane.WARNING_MESSAGE);
+        } else if (tanggalPergi.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Pilih tanggal pergi", "System", JOptionPane.WARNING_MESSAGE);
+        }
+        if (pulangPergi.isSelected()) {
+            if (tanggalPulang.getDate() == null) {
+                JOptionPane.showMessageDialog(null, "Pilih tanggal pulang", "System", JOptionPane.WARNING_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void pPulangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPulangMouseClicked
@@ -385,38 +384,26 @@ public class OrderTicket_KYI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> AsalBerangkat;
-    private javax.swing.JComboBox<String> AsalBerangkat1;
-    private javax.swing.JComboBox<String> AsalBerangkat2;
-    private javax.swing.JComboBox<String> AsalBerangkat3;
-    private javax.swing.JCheckBox cbPulangPergi;
-    private javax.swing.JCheckBox cbPulangPergi1;
+    private javax.swing.JComboBox<String> asal;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel pDate1;
     private javax.swing.JPanel pPassanger;
     private javax.swing.JPanel pPergi;
     private javax.swing.JPanel pPulang;
+    private javax.swing.JCheckBox pulangPergi;
+    private com.toedter.calendar.JDateChooser tanggalPergi;
+    private com.toedter.calendar.JDateChooser tanggalPulang;
+    private javax.swing.JComboBox<String> tujuan;
     // End of variables declaration//GEN-END:variables
 }
