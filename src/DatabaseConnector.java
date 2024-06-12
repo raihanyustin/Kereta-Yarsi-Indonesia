@@ -23,6 +23,21 @@ public class DatabaseConnector {
     private static final String password = "";
 
     private static java.sql.Connection connect;
+    public static java.sql.Connection getConnect(){ 
+        if (connect == null) {
+            try {
+                String url = "jdbc:mysql://localhost:3306/database_kyi";
+                String user = "root";
+                String password = "";
+                connect = DriverManager.getConnection(url, user, password);
+                System.out.println("Connection Successfully");
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("Error!");
+            }
+        }
+        return connect;
+    }
     private static Statement st;
     private static ResultSet rs;
     private static PreparedStatement ps;
@@ -42,6 +57,8 @@ public class DatabaseConnector {
             Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
 
     public String[] getColumnName(String table) {
         String[] columnName = new String[0];
