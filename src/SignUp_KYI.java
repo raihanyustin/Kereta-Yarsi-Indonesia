@@ -13,13 +13,14 @@ import javax.swing.JOptionPane;
  *
  * @author mraih
  */
-public class SignIn_KYI extends javax.swing.JFrame {
+public class SignUp_KYI extends javax.swing.JFrame {
     DatabaseConnector c = new DatabaseConnector();
 
+    
     /**
-     * Creates new form SignIn_KYS
+     * Creates new form SingUp_KYI
      */
-    public SignIn_KYI() {
+    public SignUp_KYI() {
         initComponents();
     }
 
@@ -38,10 +39,12 @@ public class SignIn_KYI extends javax.swing.JFrame {
         textUsername = new javax.swing.JTextField();
         labelUsername = new javax.swing.JLabel();
         labelUsername1 = new javax.swing.JLabel();
-        buttonLogin = new javax.swing.JButton();
+        buttonSignUp = new javax.swing.JButton();
         textPassword = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        buttonSignUp = new javax.swing.JButton();
+        buttonSignIn = new javax.swing.JButton();
+        textCPassword = new javax.swing.JPasswordField();
+        labelUsername2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("KYI");
@@ -50,7 +53,7 @@ public class SignIn_KYI extends javax.swing.JFrame {
         logoKYS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Logo KYI.png"))); // NOI18N
 
         labelLogin.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
-        labelLogin.setText("Login");
+        labelLogin.setText("Sign Up");
 
         textUsername.setForeground(new java.awt.Color(0, 0, 0));
         textUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -63,20 +66,9 @@ public class SignIn_KYI extends javax.swing.JFrame {
 
         labelUsername1.setText("Password");
 
-        buttonLogin.setBackground(new java.awt.Color(26, 101, 0));
-        buttonLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        buttonLogin.setForeground(new java.awt.Color(0, 0, 0));
-        buttonLogin.setText("Login");
-        buttonLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLoginActionPerformed(evt);
-            }
-        });
-
-        textPassword.setForeground(new java.awt.Color(0, 0, 0));
-
-        jLabel1.setText("Don't have an account ?");
-
+        buttonSignUp.setBackground(new java.awt.Color(26, 101, 0));
+        buttonSignUp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        buttonSignUp.setForeground(new java.awt.Color(0, 0, 0));
         buttonSignUp.setText("Sign Up");
         buttonSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,38 +76,51 @@ public class SignIn_KYI extends javax.swing.JFrame {
             }
         });
 
+        textPassword.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setText("Already have an account ?");
+
+        buttonSignIn.setText("Sign In");
+        buttonSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSignInActionPerformed(evt);
+            }
+        });
+
+        textCPassword.setForeground(new java.awt.Color(0, 0, 0));
+
+        labelUsername2.setText("Confirm Password");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(labelUsername)
-                                .addComponent(textUsername)
-                                .addComponent(labelUsername1)
-                                .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel1)))
+                    .addComponent(buttonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(labelUsername)
+                        .addComponent(textUsername)
+                        .addComponent(labelUsername1)
+                        .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textCPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelUsername2))
                 .addContainerGap(26, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(buttonSignUp)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelLogin)
-                        .addGap(141, 141, 141))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(logoKYS)
-                        .addGap(70, 70, 70))))
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelLogin)
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonSignIn)
+                        .addGap(80, 80, 80))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,22 +137,24 @@ public class SignIn_KYI extends javax.swing.JFrame {
                 .addComponent(labelUsername1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonLogin)
-                .addGap(45, 45, 45)
-                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelUsername2)
+                .addGap(2, 2, 2)
+                .addComponent(textCPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonSignUp)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonSignIn)
+                    .addComponent(jLabel1))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,33 +171,49 @@ public class SignIn_KYI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textUsernameActionPerformed
 
-    private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
-        // TODO add your handling code here:
-        MainMenu_KYI mainMenu = new MainMenu_KYI();
-        try {
-            String sql = "SELECT * FROM login_user WHERE username ='" + textUsername.getText() + "' and password='" + textPassword.getText() + "'";
-            ResultSet r = c.executeQuery(sql);
-            
-            if ( r.next() ) {
-                JOptionPane.showMessageDialog(null, "Login Successfully");
-                mainMenu.setVisible(true);
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Wrong Username or Password", "System", JOptionPane.ERROR_MESSAGE);
-                textPassword.requestFocus();
-            }
-        }  catch ( SQLException e ) {
-            System.out.println("Error!");
-            System.err.println(e.getMessage());
-        }
-    }//GEN-LAST:event_buttonLoginActionPerformed
-
     private void buttonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignUpActionPerformed
         // TODO add your handling code here:
-        SignUp_KYI signUp = new SignUp_KYI();
-        signUp.setVisible(true);
-        dispose();
+        String username = textUsername.getText().trim();
+        String password = textPassword.getText().trim();
+        String confirmPassword = textCPassword.getText().trim();
+        
+        if ( username.isEmpty() ) {
+            JOptionPane.showMessageDialog(null, "Create a username first", "System Warning", JOptionPane.WARNING_MESSAGE);
+        } else if ( password.isEmpty() ) {
+            JOptionPane.showMessageDialog(null, "Create a password", "System Warning", JOptionPane.WARNING_MESSAGE);
+        } else if ( confirmPassword.isEmpty() ) {
+            JOptionPane.showMessageDialog(null, "Confirm password", "System Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            if ( !password.equalsIgnoreCase(confirmPassword) ) {
+                JOptionPane.showMessageDialog(null, "Password does not match", "System Warning", JOptionPane.ERROR_MESSAGE);
+            } else {
+                try {
+               Connection c = DatabaseConnector.getConnect();
+               String sql = "INSERT INTO login_user (username, password) VALUES (?,?)";
+
+               PreparedStatement p = c.prepareStatement(sql);
+               p.setString(1, username);
+               p.setString(2, password);
+               p.executeUpdate();
+
+               JOptionPane.showMessageDialog(null, "Account created successfully", "System", JOptionPane.INFORMATION_MESSAGE);
+           } catch (SQLException e) {
+               JOptionPane.showMessageDialog(null, "Error:" + e.getMessage(), "System Error", JOptionPane.ERROR_MESSAGE);
+           } finally {
+               this.dispose();
+               SignIn_KYI signIn = new SignIn_KYI();
+               signIn.setVisible(true);
+                }
+            }
+        }
     }//GEN-LAST:event_buttonSignUpActionPerformed
+
+    private void buttonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignInActionPerformed
+        // TODO add your handling code here:
+        SignIn_KYI signIn = new SignIn_KYI();
+        signIn.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_buttonSignInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,13 +232,13 @@ public class SignIn_KYI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SignIn_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SignIn_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SignIn_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SignIn_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp_KYI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -229,14 +252,16 @@ public class SignIn_KYI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonLogin;
+    private javax.swing.JButton buttonSignIn;
     private javax.swing.JButton buttonSignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogin;
     private javax.swing.JLabel labelUsername;
     private javax.swing.JLabel labelUsername1;
+    private javax.swing.JLabel labelUsername2;
     private javax.swing.JLabel logoKYS;
+    private javax.swing.JPasswordField textCPassword;
     private javax.swing.JPasswordField textPassword;
     private javax.swing.JTextField textUsername;
     // End of variables declaration//GEN-END:variables
